@@ -1,0 +1,22 @@
+<?php
+if(isset($_COOKIE[session_name()])) {
+    session_start();
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == 1 && $_SESSION["errors"] < 3) {
+            echo "کد ارسال شده نامعتبر است!";
+        }
+        if ($_GET["error"] == 1 && $_SESSION["errors"] > 2) {
+            echo "کاربر گرامی لطفا مجدد اقدام به ثبت نام کنید!";
+            if(isset($_COOKIE[session_name()])) {
+                setcookie(session_name(),"",time()-3600,"/");
+                //session_destroy();
+            }
+        }
+    }
+}else{
+    if(isset($_GET["error"])) {
+        echo "کاربر گرامی لطفا مجدد اقدام به ثبت نام کنید!";
+        session_start();
+
+    }
+}
