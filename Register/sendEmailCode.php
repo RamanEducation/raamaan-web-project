@@ -6,7 +6,7 @@ $_SESSION["password"]=$_POST["password"];
 $_SESSION["email"]=$_POST["email"];
 $_SESSION["firstName"]=$_POST["firstName"];
 $_SESSION["lastName"]=$_POST["lastName"];
-$emailCode=rand(10000,100000);
+$emailCode=rand(100000,1000000);
 $text="your email code is $emailCode";
 mail($_SESSION["email"],"email confirmation code",$text);
 $_SESSION["emailCode"]=$emailCode;

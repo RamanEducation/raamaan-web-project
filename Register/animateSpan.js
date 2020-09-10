@@ -2,12 +2,11 @@ $(document).ready(function () {
     $("input").focus(function () {
         $(this).attr("placeholder","");
         let className=$(this).attr("class");
-        //$("#"+className).css("display","inline");
         $("#"+className).fadeIn();
     });
     $("input").blur(function () {
         let className=$(this).attr("class");
-        $("#"+className).css("display","none");
+        $("#"+className).fadeOut();
         if(className==="username"){
             $(this).attr("placeholder","نام کاربری");
         }else if(className==="password"){

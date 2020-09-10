@@ -1,6 +1,8 @@
 <?php
 if(isset($_COOKIE[session_name()])) {
-    session_start();
+    if(session_status()==PHP_SESSION_NONE) {
+        session_start();
+    }
     if (isset($_GET["error"])) {
         if ($_GET["error"] == 1 && $_SESSION["errors"] < 3) {
             echo "کد ارسال شده نامعتبر است!";
