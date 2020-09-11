@@ -11,14 +11,12 @@ if(isset($_COOKIE[session_name()])) {
             echo "کاربر گرامی لطفا مجدد اقدام به ثبت نام کنید!";
             if(isset($_COOKIE[session_name()])) {
                 setcookie(session_name(),"",time()-3600,"/");
-                //session_destroy();
+                session_destroy();
             }
         }
     }
 }else{
     if(isset($_GET["error"])) {
         echo "کاربر گرامی لطفا مجدد اقدام به ثبت نام کنید!";
-        session_start();
-
     }
 }
