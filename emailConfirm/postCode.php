@@ -5,7 +5,7 @@ if(isset($_COOKIE[session_name()])) {
     $emailCode = $_SESSION["emailCode"];
     echo $emailCode;
     if ($emailCode == $_POST["emailCode"]) {
-        header("location: ../loginPanel/login.php");
+        header("location: ../loginPanel/addToDB.php");
     } else {
         $_SESSION["errors"]++;
         header("location: emailConfirmation.php?error=1");
