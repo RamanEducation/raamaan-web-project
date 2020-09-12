@@ -17,30 +17,35 @@
             <p id="generalError"><?php include_once ("generalError.php");?></p>
             <div class="input-fluid">
                 <span class="hiddenSpan" id="username">نام کاربری</span>
-                 <input class="username" type="text" name="username" id="usernameInput" maxlength="20" placeholder="نام کاربری" onkeyup="checkValidUsername()">
+                 <input class="username" type="text" name="username" id="usernameInput" maxlength="20" placeholder="نام کاربری" onblur="checkValidUsername()" onkeyup="changeDir(id)">
                 <p id="usernameError"></p>
             </div>
             <div class="input-fluid">
                 <span class="hiddenSpan" id="password">رمز عبور</span>
-                <input class="password" id="passwordInput" type="password" name="password" maxlength="20" placeholder="رمز عبور" onkeyup="checkValidPassword()">
+                <input class="password" id="passwordInput" type="password" name="password" maxlength="20" placeholder="رمز عبور" onblur="checkValidPassword()" onkeyup="changeDir(id)">
             </div>
             <div class="input-fluid">
                 <span class="hiddenSpan" id="confirm">تایید</span>
-                <input class="confirm" id="confirmInput" type="password" maxlength="20" placeholder="تایید" onkeyup="checkValidPassword()">
+                <input class="confirm" id="confirmInput" type="password" maxlength="20" placeholder="تایید" onblur="checkValidPassword()" onkeyup="changeDir(id)">
                 <p id="passwordError"></p>
             </div>
             <div class="input-fluid">
                 <span class="hiddenSpan" id="email">پست الکترونیکی</span>
-                <input class="email" id="emailInput" type="email" name="email" placeholder="پست الکترونیکی" onkeyup="checkValidEmail()">
+                <input class="email" id="emailInput" type="email" name="email" placeholder="پست الکترونیکی" onblur="checkValidEmail()" onkeyup="changeDir(id)">
                 <p  id="emailError"></p>
             </div>
             <div class="input-fluid">
+                <span class="hiddenSpan" id="phoneNumber">تلفن همراه</span>
+                <input class="phoneNumber" id="phoneNumberInput" type="text" name="phoneNumber" maxlength="11" placeholder="تلفن همراه" onblur="checkValidPhoneNumber()" onkeyup="changeDir(id)">
+                <p  id="phoneError"></p>
+            </div>
+            <div class="input-fluid">
                 <span class="hiddenSpan" id="firstName">نام</span>
-                <input class="firstName" id="firstNameInput" type="text" name="firstName" maxlength="20" placeholder="نام" onkeyup="checkValidName(id)">
+                <input class="firstName" id="firstNameInput" type="text" name="firstName" maxlength="20" placeholder="نام" onblur="checkValidName(id)" onkeyup="changeDir(id)">
             </div>
             <div class="input-fluid">
                 <span class="hiddenSpan" id="lastName">نام خانوادگی</span>
-                <input class="lastName" id="lastNameInput" type="text" name="lastName" maxlength="20" placeholder="نام خانوادگی" onkeyup="checkValidName(id)">
+                <input class="lastName" id="lastNameInput" type="text" name="lastName" maxlength="20" placeholder="نام خانوادگی" onblur="checkValidName(id)" onkeyup="changeDir(id)">
                 <p id="nameError"></p>
             </div>
 <!--            <div class="custom-select">-->

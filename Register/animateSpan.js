@@ -19,6 +19,8 @@ $(document).ready(function () {
             $(this).attr("placeholder","نام");
         }else if(className==="lastName"){
             $(this).attr("placeholder","نام خانوادگی");
+        }else if(className==="phoneNumber"){
+            $(this).attr("placeholder","تلفن همراه");
         }
     });
 });
