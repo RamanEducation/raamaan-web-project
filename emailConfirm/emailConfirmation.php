@@ -14,11 +14,12 @@
             <div class="input-fluid">
                 <p id="generalError"><?php include_once ("wrongCode.php");?></p>
                 <span class="hiddenSpan" id="emailCode">کد تایید</span>
-                <input class="emailCode" type="text" name="emailCode" id="codeInput" maxlength="6" placeholder="کد تایید">
+                <input class="emailCode" type="text" name="emailCode" id="codeInput" maxlength="6" placeholder="کد تایید" onkeyup="changeDir(id)">
                 <input type="submit" value="ارسال">
                <a href="emailConfirmation.php?resend=1" style="color: dodgerblue;">ارسال مجدد کد تایید</a>
         </form>
     </div>
     <script src="animateSpan.js"></script>
+    <script src="input.js"></script>
 </body>
 </html>
