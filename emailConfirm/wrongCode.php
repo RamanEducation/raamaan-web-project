@@ -10,8 +10,8 @@ if(isset($_COOKIE[session_name()])) {
         if ($_GET["error"] == 1 && $_SESSION["errors"] > 2) {
             echo "کاربر گرامی مجددا اقدام به ثبت نام کنید!";
             if(isset($_COOKIE[session_name()])) {
-                setcookie(session_name(),"",time()-3600,"/");
                 session_destroy();
+                setcookie(session_name(),"",time()-3600,"/");
                 header("location: ../register/Register.php?error=3");
             }
         }

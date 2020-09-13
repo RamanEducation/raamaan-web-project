@@ -23,6 +23,7 @@ $statement->bind_param("sssssss",$username,$password,$email,$phone,$firstName,$l
 $statement->execute();
 if(isset($_COOKIE[session_name()])){
     session_destroy();
+    setcookie(session_name(),"",time()-3600,"/");
 }
 header("location: login.php?register=1");
 

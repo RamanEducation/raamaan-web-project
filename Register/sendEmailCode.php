@@ -12,8 +12,9 @@ $text="your email code is $emailCode";
 mail($_SESSION["email"],"email confirmation code",$text);
 $_SESSION["emailCode"]=$emailCode;
 $_SESSION["errors"]=0;
+$_SESSION["time"]=time();
 
-setcookie(session_name(),session_id(),time()+1800,"/");
+//setcookie(session_name(),session_id(),time()+1800,"/");
 
 header("location: ../emailConfirm/emailConfirmation.php");
 
