@@ -9,7 +9,7 @@ if(isset($_COOKIE[session_name()])){
         if ($difference > 1800) {
             session_destroy();
             setcookie(session_name(), session_id(), time() - 1800, "/");
-            header("location: ../register/Register.php?error=3");
+            header("location:  ../../Pages/Register/Register.php?error=3");
         } else {
             $emailCode = rand(100000, 1000000);
             $_SESSION["emailCode"] = $emailCode;

@@ -3,7 +3,7 @@
 if(session_status()==PHP_SESSION_NONE) {
     session_start();
 }
-include_once ("../DBInformation/dbInf.php");
+include_once("../DBInformation/dbInf.php");
 
 $mysql=new mysqli(host,username,password,dbname);
 $statement=$mysql->prepare("INSERT INTO `users` (`username`,`password`,`email`,`phone`,`firstname`,`lastname`,`type`) VALUES (?,?,?,?,?,?,?)");
@@ -25,7 +25,7 @@ if(isset($_COOKIE[session_name()])){
     session_destroy();
     setcookie(session_name(),"",time()-3600,"/");
 }
-header("location: login.php?register=1");
+header("location: ../../Pages/loginPanel/login.php?register=1");
 
 
 

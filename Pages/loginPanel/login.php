@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>صفحه ورود</title>
-    <script src="../plugin/jQuery/jquery-3.5.1.js"></script>
+    <script src="../../includes/plugin/jQuery/jquery-3.5.1.js"></script>
     <link type="text/css" rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="container">
-         <form method="post" id="myForm" action="postData.php">
-             <p id="generalError"><?php include_once("checkQuery.php");?></p>
+         <form method="post" id="myForm" action="../../includes/loginPanel/postData.php">
+             <p id="generalError"><?php include_once("../../includes/emailConfirm/checkQuery.php");?></p>
              <div class="input-fluid">
                  <span class="hiddenSpan" id="username">نام کاربری</span>
                  <input class="username" type="text" name="username" id="usernameInput" maxlength="20" placeholder="نام کاربری"  onkeyup="changeDir(id)">

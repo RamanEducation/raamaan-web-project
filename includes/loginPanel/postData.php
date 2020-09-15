@@ -1,6 +1,6 @@
 <?php
 
-include_once ("../DBInformation/dbInf.php");
+include_once("../DBInformation/dbInf.php");
 
 function makeSafe($input){
     return stripcslashes(htmlspecialchars(trim($input)));
@@ -22,14 +22,14 @@ if($result->num_rows==1){
     $_SESSION["logged_in"]=1;
     if($row["type"]==="Admin"){
         $_SESSION["type"]="Admin";
-        header("location: ../adminPanel/adminPanel.php");
+        header("location: ../../Pages/adminPanel/adminPanel.php");
     }elseif($row["type"]==="User"){
         $_SESSION["type"]="User";
-        header("location: ../userPanel/userPanel.php");
+        header("location: ../../Pages/userPanel/userPanel.php");
     }
 
 }else{
-    header("location: login.php?error=1");
+    header("location: ../../Pages/loginPanel/login.php?error=1");
 }
 
 

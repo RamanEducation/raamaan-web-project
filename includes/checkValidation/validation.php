@@ -5,7 +5,7 @@ if(session_status()==PHP_SESSION_NONE){
     if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]==1){}
     else{
         session_destroy();
-        header("location: ../loginPanel/login.php");
+        header("location: ../../Pages/loginPanel/login.php");
     }
 }
 

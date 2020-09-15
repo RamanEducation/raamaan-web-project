@@ -12,13 +12,13 @@ if(isset($_COOKIE[session_name()])) {
             if(isset($_COOKIE[session_name()])) {
                 session_destroy();
                 setcookie(session_name(),"",time()-3600,"/");
-                header("location: ../register/Register.php?error=3");
+                header("location:  ../../Pages/Register/Register.php?error=3");
             }
         }
     }
 }else{
     if(isset($_GET["error"])) {
         echo "کاربر گرامی مجددا اقدام به ثبت نام کنید!";
-        header("location: ../register/Register.php?error=3");
+        header("location:  ../../Pages/Register/Register.php?error=3");
     }
 }
