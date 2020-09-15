@@ -3,7 +3,7 @@ if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
 if($_SESSION["type"]==="Admin"){
-    header("location: ../AdminPanel/AdminPanel.php");
+    header("location: ../adminPanel/adminPanel.php");
 }
 ?>
 <!DOCTYPE html>
