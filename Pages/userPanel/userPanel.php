@@ -2,8 +2,8 @@
 if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
-if($_SESSION["type"]==="Admin"){
-    header("location: ../adminPanel/adminPanel.php");
+if($_SESSION["type"]=="Admin"){
+   header("location: ../adminPanel/adminPanel.php");
 }
 ?>
 <!DOCTYPE html>
