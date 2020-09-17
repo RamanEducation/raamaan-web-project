@@ -1,11 +1,4 @@
-<?php include_once("../../includes/checkValidation/validation.php");
-if(session_status()==PHP_SESSION_NONE){
-    session_start();
-}
-if($_SESSION["type"]=="Admin"){
-   header("location: ../adminPanel/adminPanel.php");
-}
-?>
+<?php include_once("../../includes/checkValidation/userValidation.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,9 +1,9 @@
 <?php
+if(session_status()==PHP_SESSION_NONE) {
+    session_start();
+}
+if(isset($_COOKIE[session_name()]) && isset($_SESSION["time"]) && isset($_SESSION["emailCode"])) {
 
-if(isset($_COOKIE[session_name()])) {
-    if(session_status()==PHP_SESSION_NONE) {
-        session_start();
-    }
     $difference=time()-$_SESSION["time"];
     if($difference>1800){
         session_destroy();

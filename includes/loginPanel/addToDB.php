@@ -21,6 +21,7 @@ $type="User";
 
 $statement->bind_param("sssssss",$username,$password,$email,$phone,$firstName,$lastName,$type);
 $statement->execute();
+$mysql->close();
 if(isset($_COOKIE[session_name()])){
     session_destroy();
     setcookie(session_name(),"",time()-3600,"/");

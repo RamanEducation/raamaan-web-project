@@ -1,3 +1,4 @@
+<?php include_once("../../includes/checkValidation/adminValidation.php"); ?>
 <!DOCTYPE html>
 <html>
     <header>
@@ -10,7 +11,8 @@
             <h1 style="color: #000000;">Raman Exams</h1>
         </div> 
         
-       <form>
+       <form  method="post"  enctype="multipart/form-data" action="../../includes/adminPanel/examFormValidation.php">
+           <p style="color:red;"><?php include_once ("../../includes/adminPanel/checkErrors.php");?></p>
   <label for="fname" class="formLabel">تیتر آزمون</label><br>
   <input type="text" id="fname" name="fname" class="formInput"><br>
   
@@ -30,9 +32,12 @@
   <input type="time" id="appt2" name="appt2" class="formInput"><br>
   
     <label for="appt" class="formLabel">آپلود سوالات آزمون</label><br>
-   <input type="file" id="myFile" name="filename" class="formInput"><br>
-  
-<button type="button" class="getStartedButton" onClick="parent.location='inputForm.html'">تایید</button>
+   <input type="file" id="myFile" name="myFile" class="formInput"><br>
+
+   <label for="appt" class="formLabel">آپلود پاسخ آزمون</label><br>
+    <input type="file" id="myFile2" name="myFile2" class="formInput"><br>
+
+   <input type="submit" class="getStartedButton" value="ارسال">تایید</input>
 </form>
     </body>
     

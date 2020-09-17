@@ -1,6 +1,7 @@
+<?php include_once("../../includes/checkValidation/adminValidation.php"); ?>
 <!DOCTYPE html>
 <html>
-    <header>
+<header></header>
          <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     
@@ -10,7 +11,7 @@
         </div> 
         
         <div class="startExamBtn">
-            	<button class="getStartedButton" onClick="parent.location='createExam.html'">ایجاد آزمون</button>
+            	<button class="getStartedButton" onClick="parent.location='createExam.php'">ایجاد آزمون</button>
         </div>
     </body>
     

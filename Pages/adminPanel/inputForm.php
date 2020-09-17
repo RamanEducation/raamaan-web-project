@@ -1,3 +1,4 @@
+<?php include_once("../../includes/checkValidation/adminValidation.php"); ?>
     <!DOCTYPE html>
     <html>
         <header>
@@ -20,8 +21,9 @@
 
 <!-- -->
 
-<form action="mailto:exams@raamaangroup.com" method="post" enctype="text/plain" class="form-horizontal">
-  <div class="userpassContainer">
+<form action="../../includes/adminPanel/inputFormValidation.php" method="post" class="form-horizontal">
+    <p style="color: red"><?php include_once ("../../includes/adminPanel/checkErrors.php");?></p>
+    <div class="userpassContainer">
      <!-- <input type="text" name="username" placeholder="Username">
       <input type="text" name="password" placeholder="Password"> -->
       

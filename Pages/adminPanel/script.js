@@ -2,8 +2,7 @@ var radio = document.getElementsByClassName("qBox")[0]
 var divContainer = document.getElementById("container")
 
 
-
-for (var i = 1; i <= 500; i++) {
+for (var i = 1; i <500; i++) {
     var cln = radio.cloneNode(true)
     var h5 = document.createElement("h5")
     h5.innerHTML = i
@@ -83,7 +82,7 @@ for (var i = 0; i < a.length; i++) {
     //     document.getElementsByClassName("radioInputs")[i*3].setAttribute('name', ("question:" + i))
 }
 
-for (var i = 1; i <= 500; i++) {
+for (var i = 1; i <=500; i++) {
 
 
     document.getElementsByClassName("radioInputs")[i * 0 + 4].setAttribute('id', ("id" + (i * 0)))
