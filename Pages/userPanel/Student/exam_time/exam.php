@@ -1,4 +1,14 @@
-<?php include_once ("../../../../includes/checkValidation/userValidation.php");?>
+<?php include_once ("../../../../includes/checkValidation/userValidation.php");
+
+if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+if(isset($_SESSION["examId"])==false){
+    header("location: ../before_exam/student.php");
+}
+
+
+?>
     <!DOCTYPE html>
     <html>
         <header>
@@ -22,7 +32,7 @@
 
 <!-- -->
 
-<form action="mailto:exams@raamaangroup.com" method="post" enctype="text/plain" class="form-horizontal">
+<form action="../../../../includes/userPanel/finishExam.php" method="post" class="form-horizontal" id="form">
   <div class="userpassContainer">
      <!-- <input type="text" name="username" placeholder="Username">
       <input type="text" name="password" placeholder="Password"> -->

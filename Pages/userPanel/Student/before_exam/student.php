@@ -1,4 +1,6 @@
-<?php include_once ("../../../../includes/checkValidation/userValidation.php");?>
+<?php include_once ("../../../../includes/checkValidation/userValidation.php");
+
+?>
 
     <!DOCTYPE html>
     <html>
@@ -24,7 +26,12 @@
                     let reqXhttp=new XMLHttpRequest();
                     reqXhttp.onreadystatechange=function () {
                         if(this.status==200 && this.readyState==4){
-                            updateExam();
+                            if(this.responseText=="update") updateExam();
+                            else if(this.responseText=="exam"){
+                                location.href="../exam_time/exam.php";
+                            }else if(this.responseText=="result"){
+                                location.href="../after_exam/afterExam.php";
+                            }
                         }
                     };
                     reqXhttp.open("GET","../../../../includes/userPanel/examRequest.php?examId="+id,true);
