@@ -1,5 +1,5 @@
 <?php include_once ("../../../../includes/checkValidation/userValidation.php");
-
+include_once ("../../../../includes/checkValidation/examTimeValidation.php");
 if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
@@ -36,7 +36,7 @@ if(isset($_SESSION["examId"])==false){
   <div class="userpassContainer">
      <!-- <input type="text" name="username" placeholder="Username">
       <input type="text" name="password" placeholder="Password"> -->
-      
+      <a href="#" style="color:dodgerblue;" onclick="fileDownload()">دانلود سوالات آزمون</a>
       <div class="labelContainer">
       <label for="fname" class="formLabel">پاسخبرگ آزمون</label><br>
       </div>
@@ -90,12 +90,24 @@ if(isset($_SESSION["examId"])==false){
           </div>
           
             </div>
-             <input type="submit" class="btn btn-default getStartedButton"></input>
+             <input type="submit" class="btn btn-default getStartedButton" value="ثبت پاسخ و ارسال"></input>
             </form>
            
            
 
  <script type="text/javascript" src="examScript.js"></script>
+  <script>
+      function fileDownload(){
+        let xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function () {
+          if(this.readyState==4 && this.status==200){
+                alert(this.responseText)
+          }
+        };
+        xhttp.open("GET","../../../../includes/userPanel/download.php?file=qDir",true);
+        xhttp.send();
+      }
+  </script>
         </body>
         
         </html>

@@ -1,5 +1,5 @@
 <?php include_once ("../../../../includes/checkValidation/userValidation.php");
-
+date_default_timezone_set("Asia/Tehran");
 ?>
 
     <!DOCTYPE html>
@@ -26,7 +26,9 @@
                     let reqXhttp=new XMLHttpRequest();
                     reqXhttp.onreadystatechange=function () {
                         if(this.status==200 && this.readyState==4){
-                            if(this.responseText=="update") updateExam();
+                            if(this.responseText=="update") {
+                                updateExam();
+                            }
                             else if(this.responseText=="exam"){
                                 location.href="../exam_time/exam.php";
                             }else if(this.responseText=="result"){
@@ -37,6 +39,28 @@
                     reqXhttp.open("GET","../../../../includes/userPanel/examRequest.php?examId="+id,true);
                     reqXhttp.send();
                 }
+            </script>
+            <script>
+
+                function examDownload(id){
+                    let xhttp=new XMLHttpRequest();
+                    xhttp.onreadystatechange=function () {
+                        if(this.readyState==4 && this.status==200){
+                        }
+                    };
+                    xhttp.open("GET","../../../../includes/userPanel/download.php?file=qDir&&examId="+id,true);
+                    xhttp.send();
+                }
+                function keyDownLoad(id) {
+                    let xhttp=new XMLHttpRequest();
+                    xhttp.onreadystatechange=function () {
+                        if(this.readyState==4 && this.status==200){
+                        }
+                    };
+                    xhttp.open("GET","../../../../includes/userPanel/download.php?file=aDir&&examId="+id,true);
+                    xhttp.send();
+                }
+
             </script>
         </head>
 
